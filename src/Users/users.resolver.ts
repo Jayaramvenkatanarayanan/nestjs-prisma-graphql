@@ -84,9 +84,6 @@ export class UserResolver {
   // rawQuery
   @Query(() => [Post])
   async getAllPost() {
-    return await this.prismaService.$queryRaw(
-      'select * from "public"."Post"'
-    );
+    return await this.prismaService.$queryRaw('select * from "public"."Post"');
   }
-
 }
