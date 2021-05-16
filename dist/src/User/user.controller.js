@@ -6,24 +6,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppModule = void 0;
-const users_service_1 = require("./Users/users.service");
-const users_module_1 = require("./Users/users.module");
+exports.UserController = void 0;
 const common_1 = require("@nestjs/common");
-const graphql_1 = require("@nestjs/graphql");
-let AppModule = class AppModule {
+let UserController = class UserController {
 };
-AppModule = __decorate([
-    common_1.Module({
-        imports: [
-            graphql_1.GraphQLModule.forRoot({
-                autoSchemaFile: true,
-            }),
-            users_module_1.UsersModule,
-        ],
-        controllers: [],
-        providers: [users_service_1.UsersService],
-    })
-], AppModule);
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+UserController = __decorate([
+    common_1.Controller()
+], UserController);
+exports.UserController = UserController;
+//# sourceMappingURL=user.controller.js.map
