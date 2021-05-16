@@ -9,18 +9,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetUserArgs = void 0;
+exports.Profile = void 0;
+require("reflect-metadata");
 const graphql_1 = require("@nestjs/graphql");
-const class_validator_1 = require("class-validator");
-let GetUserArgs = class GetUserArgs {
+const user_1 = require("./user");
+let Profile = class Profile {
 };
 __decorate([
-    graphql_1.Field(),
-    class_validator_1.IsNotEmpty(),
+    graphql_1.Field((type) => graphql_1.Int),
     __metadata("design:type", Number)
-], GetUserArgs.prototype, "id", void 0);
-GetUserArgs = __decorate([
-    graphql_1.ArgsType()
-], GetUserArgs);
-exports.GetUserArgs = GetUserArgs;
-//# sourceMappingURL=getuser.args.js.map
+], Profile.prototype, "id", void 0);
+__decorate([
+    graphql_1.Field((type) => String),
+    __metadata("design:type", String)
+], Profile.prototype, "bio", void 0);
+__decorate([
+    graphql_1.Field((type) => user_1.User, { nullable: true }),
+    __metadata("design:type", user_1.User)
+], Profile.prototype, "author", void 0);
+__decorate([
+    graphql_1.Field((type) => graphql_1.Int),
+    __metadata("design:type", Number)
+], Profile.prototype, "userId", void 0);
+Profile = __decorate([
+    graphql_1.ObjectType()
+], Profile);
+exports.Profile = Profile;
+//# sourceMappingURL=Profile.js.map

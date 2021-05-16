@@ -1,4 +1,8 @@
+import { PostCreateInput } from './userPost.input';
+import { ProfileCreateInput } from './userProfile.input';
 export declare class CreateUserInput {
     email: string;
-    age: number;
+    name: string;
+    posts: [PostCreateInput];
+    profile: ProfileCreateInput;
 }

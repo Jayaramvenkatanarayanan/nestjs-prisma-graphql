@@ -1,50 +1,66 @@
 import { Injectable } from "@nestjs/common";
-import { v4 as uuidv4 } from "uuid";
-import { GetUserArgs } from "./dto/args/getuser.args";
-import { GetUsersArgs } from "./dto/args/getusers.args";
+import { User, Post as Postmodule } from "@prisma/client";
+import { PrismaService } from "../prisma.service";
 import { CreateUserInput } from "./dto/input/createUser.input";
-import { DeleteUserInput } from "./dto/input/deleteUser.input";
-import { UpdateUserInput } from "./dto/input/updateUser.input";
-import { User } from "./model/user";
+import { Post } from "./model/post";
 
 @Injectable()
 export class UsersService {
-    private users: User[] = [];
+  constructor(private readonly prismaService: PrismaService) {}
 
-    public createUser(createUserData: CreateUserInput): User {
-        const user: User = {
-            userId: uuidv4(),
-            ...createUserData
-        }
+  // get all users
+  async getAllUser(): Promise<User[]> {
+    return await this.prismaService.user.findMany();
+  }
 
-        this.users.push(user);
+  // create user
+  async createUser(createUserData: CreateUserInput): Promise<User> {
+    const postData = createUserData.posts?.map((post) => {
+      return { title: post.title, content: post.content || undefined };
+    });
+    const profileData = createUserData.profile;
+    return await this.prismaService.user.create({
+      data: {
+        email: createUserData.email,
+        name: createUserData.name,
+        posts: {
+          create: postData,
+        },
+        profile: {
+          create: profileData,
+        },
+      },
+    });
+  }
 
-        return user;
-    }
+  // get user by id
 
-    public updateUser(updateUserData: UpdateUserInput): User {
-        const user = this.users.find(user => user.userId === updateUserData.userId);
+  async getUser(id: number): Promise<User> {
+    return this.prismaService.user.findUnique({
+      where: { id },
+    });
+  }
 
-        Object.assign(user, updateUserData);
+  // get user update
+  async postUpdate(id: number): Promise<Post | null> {
+    const post = await this.prismaService.post.findUnique({
+      where: { id: id || undefined },
+      select: {
+        published: true,
+      },
+    });
+    return this.prismaService.post.update({
+      where: { id: id || undefined },
+      data: { published: !post?.published },
+    });
+  }
 
-        return user;
-    }
+  // deleteUser
+  async deleteUser(id: number): Promise<User | null> {
+    return await this.prismaService.user.delete({
+      where: { id: id },
+    });
+  }
 
-    public getUser(getUserArgs: GetUserArgs): User {
-        return this.users.find(user => user.userId === getUserArgs.userId);
-    }
 
-    public getUsers(getUsersArgs: GetUsersArgs): User[] {
-        return getUsersArgs.userId.map(userId => this.getUser({ userId }));
-    }
-
-    public deleteUser(deleteUserData: DeleteUserInput): User {
-        const userIndex = this.users.findIndex(user => user.userId === deleteUserData.userId);
-
-        const user = this.users[userIndex];
-
-        this.users.splice(userIndex);
-
-        return user;
-    }
 }

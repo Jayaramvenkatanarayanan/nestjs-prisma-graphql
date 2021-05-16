@@ -1,6 +1,10 @@
+import "reflect-metadata";
+import { Post } from "./post";
+import { Profile } from "./Profile";
 export declare class User {
-    userId: string;
+    id: number;
     email: string;
-    age: number;
-    isSubscribed?: boolean;
+    name: string;
+    posts?: [Post] | null;
+    profile?: Profile | null;
 }

@@ -1,0 +1,53 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Post {
+  id: Int!
+  createdAt: Timestamp!
+  updatedAt: Timestamp!
+  title: String!
+  content: String
+  published: Boolean
+  viewCount: Int!
+  author: User
+}
+
+"""
+`Date` type as integer. Type represents date and time as number of milliseconds from start of UNIX epoch.
+"""
+scalar Timestamp
+
+type Profile {
+  id: Int!
+  bio: String!
+  author: User
+  userId: Int!
+}
+
+type User {
+  id: Int!
+  email: String!
+  name: String
+  posts: [Post!]
+  Profile: Profile
+}
+
+type Query {
+  allUsers: User
+}
+
+type Mutation {
+  signupUser(data: UserCreateInput!): User!
+}
+
+input UserCreateInput {
+  email: String!
+  name: String
+  posts: [PostCreateInput!]
+}
+
+input PostCreateInput {
+  title: String!
+  content: String
+}

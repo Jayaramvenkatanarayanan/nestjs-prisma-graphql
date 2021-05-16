@@ -9,3 +9,78 @@ https://docs.nestjs.com/graphql/quick-start
 https://github.com/prisma/prisma-examples/tree/latest/typescript/rest-nestjs
 
 https://github.com/prisma/prisma-examples/tree/latest/typescript/graphql-sdl-first
+--
+
+query {
+  allUsers {
+    name,email,posts{
+      id,
+      content,
+      viewCount
+    },
+    profile{
+      bio
+    }
+  }
+}
+--
+mutation {
+  newUser(data: { name: "Sarah4", email: "sarah4@prisma.io",
+    posts:[
+    {
+      title:"title1",
+      content:"content2"
+    }
+  ],
+  profile:{
+    bio:"tech"
+  }
+  }) {
+    id,
+    posts{
+      id
+    }
+  }
+}
+----
+query {
+  getUser(id: 2) {
+    name
+    email
+    posts {
+      id
+      content
+      viewCount
+      published
+    }
+    profile {
+      bio
+    }
+  }
+}
+----
+mutation {
+  togglePublishPost(id: 1) {
+    id
+    published
+  }
+}
+----
+mutation{
+  deleteUser(id:12){
+    id
+  }
+}
+---
+RawQuery
+
+query {
+  getAllPost {
+    id,
+    published,
+    title,
+    content,
+    viewCount
+  }
+}
+

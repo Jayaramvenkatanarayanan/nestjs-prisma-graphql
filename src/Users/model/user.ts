@@ -1,16 +1,23 @@
+import "reflect-metadata";
 import { Field, Int, ObjectType } from "@nestjs/graphql";
-
+import { IsEmail } from "class-validator";
+import { Post } from "./post";
+import { Profile } from "./Profile";
 @ObjectType()
 export class User {
-    @Field()
-    userId: string;
+  @Field((type) => Int)
+  id: number;
 
-    @Field()
-    email: string;
+  @Field()
+  @IsEmail()
+  email: string;
 
-    @Field(() => Int)
-    age: number;
+  @Field(() => String, { nullable: true })
+  name: string;
 
-    @Field({ nullable: true })
-    isSubscribed?: boolean;
+  @Field(() => [Post], { nullable: true })
+  posts?: [Post] | null;
+
+  @Field(() => Profile, { nullable: true })
+  profile?: Profile | null;
 }

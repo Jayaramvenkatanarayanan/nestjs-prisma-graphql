@@ -9,34 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateUserInput = void 0;
+exports.PostCreateInput = void 0;
 const graphql_1 = require("@nestjs/graphql");
 const class_validator_1 = require("class-validator");
-const userPost_input_1 = require("./userPost.input");
-const userProfile_input_1 = require("./userProfile.input");
-let CreateUserInput = class CreateUserInput {
+let PostCreateInput = class PostCreateInput {
 };
 __decorate([
     graphql_1.Field(),
-    class_validator_1.IsEmail(),
+    class_validator_1.IsString(),
+    class_validator_1.IsOptional(),
     __metadata("design:type", String)
-], CreateUserInput.prototype, "email", void 0);
+], PostCreateInput.prototype, "title", void 0);
 __decorate([
     graphql_1.Field({ nullable: true }),
-    class_validator_1.IsOptional(),
-    class_validator_1.IsString(),
     __metadata("design:type", String)
-], CreateUserInput.prototype, "name", void 0);
-__decorate([
-    graphql_1.Field((type) => [userPost_input_1.PostCreateInput], { nullable: true }),
-    __metadata("design:type", Array)
-], CreateUserInput.prototype, "posts", void 0);
-__decorate([
-    graphql_1.Field((type) => userProfile_input_1.ProfileCreateInput, { nullable: true }),
-    __metadata("design:type", userProfile_input_1.ProfileCreateInput)
-], CreateUserInput.prototype, "profile", void 0);
-CreateUserInput = __decorate([
+], PostCreateInput.prototype, "content", void 0);
+PostCreateInput = __decorate([
     graphql_1.InputType()
-], CreateUserInput);
-exports.CreateUserInput = CreateUserInput;
-//# sourceMappingURL=createUser.input.js.map
+], PostCreateInput);
+exports.PostCreateInput = PostCreateInput;
+//# sourceMappingURL=userPost.input.js.map

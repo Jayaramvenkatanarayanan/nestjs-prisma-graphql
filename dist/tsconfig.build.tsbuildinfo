@@ -1431,6 +1431,11 @@
         "signature": "95b5a3078fdc51508d5d9cde59a1dd9525b53fd42dc12265a55261fd415d3274",
         "affectsGlobalScope": false
       },
+      "../src/prisma.service.ts": {
+        "version": "f2049f4b2112a13b80054320b25b3c4e72350798e91769c570ed64aed8b10d39",
+        "signature": "4e11254fb433ad6662142993fc53ad59d7892acb68b7e430a8a50b1fb279ddcb",
+        "affectsGlobalScope": false
+      },
       "../node_modules/@nestjs/graphql/dist/decorators/args-type.decorator.d.ts": {
         "version": "7371aa9dfaadc42d481fc4b65d40cc6e0ca38d3da1632db9dcc558011b68557c",
         "signature": "7371aa9dfaadc42d481fc4b65d40cc6e0ca38d3da1632db9dcc558011b68557c",
@@ -4720,64 +4725,64 @@
         "signature": "441104b363d80fe57eb79a50d495e0b7e3ebeb45a5f0d1a4067d71ef75e8fbfa",
         "affectsGlobalScope": false
       },
-      "../src/users/dto/args/getuser.args.ts": {
-        "version": "ecf195969df5ad9433cfd329075c757cc917a84e99dbd68c8a2351dea230a5a9",
-        "signature": "9b2d706c5a60e31710a8bcf936952a3c581ecd1d487ec90518ce734904190398",
+      "../src/users/dto/input/userpost.input.ts": {
+        "version": "d5aa7bb5ae86ffce58493b987d2311628bfd3219da588db0413a71cc87aea3a4",
+        "signature": "6ceef3364d0d6bd9d49234082bc3e34c4b8cf099e7a5b415b447e175edcda5a2",
         "affectsGlobalScope": false
       },
-      "../src/users/dto/args/getusers.args.ts": {
-        "version": "afa187bc3040594a25704c442e91aa866b84d189c746c6888795884a594f8c7c",
-        "signature": "0290e3084d69bd86642e9d16578be331948b027a6b2a8bef70f26181ba07ed2a",
+      "../src/users/dto/input/userprofile.input.ts": {
+        "version": "3a4193f4c366e95865b545fff126dddf4d91c3d5350b3f576caeac4bfba9d82a",
+        "signature": "aefa822d06651f1bf500b6a883987cdf14ce534a362067fab579716354ee6d73",
         "affectsGlobalScope": false
       },
       "../src/users/dto/input/createuser.input.ts": {
-        "version": "57c427eae0e996e79e019a6efce8b88656f01138b58e8b48b4e4e65b4688d84c",
-        "signature": "29cfa1335a5598bd61d90dc8f119cd3e835518e5304a78a4356949e730fcdff6",
+        "version": "b8c273968338a42b7aed558a53db723a9622ae0ccf967df35af1601791e96bbd",
+        "signature": "2a5f84ce6f5edfbffa0e625626a4e7a132f204bd484e6c44fd0d4a9dd1866460",
         "affectsGlobalScope": false
       },
-      "../src/users/dto/input/deleteuser.input.ts": {
-        "version": "03a321c1976b64812a410573bf9952fadc227967d867dd8ae47b8d076e32e65d",
-        "signature": "92395ccdf542e22836d561299b081275984586f0a91a9ea34c5742334ac57d47",
-        "affectsGlobalScope": false
-      },
-      "../src/users/dto/input/updateuser.input.ts": {
-        "version": "3eed039141d18cbf1a86923b10cbfdb17d1a0c633c5b615c4828e783e9093b3b",
-        "signature": "0d9506b46da8b6b3f51818effe0209a86b9b54050078bf297874a75fd5e91803",
+      "../src/users/model/profile.ts": {
+        "version": "2ea4cde0b92897d8d98903a931ccc543a62616770aefd76eba05faa0a9d6b338",
+        "signature": "c688a8c6ed8f665819701b4c3bc2f08ad30c870950cee39d19d008676fe2d6e4",
         "affectsGlobalScope": false
       },
       "../src/users/model/user.ts": {
-        "version": "be1b52dc8d6af98c46a8cddc15bd58697eecb2e1121d0df3415a0e43c2c59816",
-        "signature": "b12834a906027ac3886679779969bb8f23799f5098e87835020846fa75b373e1",
+        "version": "453e9942005fff9cf9c89f903beb5a7af4a3b4e1c81fcdced96ca90d37bb6424",
+        "signature": "52f83da09ecbb0d48d83be1a5fe931f929c07818ee55e845838a19b678e79283",
+        "affectsGlobalScope": false
+      },
+      "../src/users/model/post.ts": {
+        "version": "f4fdb189d0da7f32a27138ca03e9027e6f350c6a73edba37759c23d6396cf9b4",
+        "signature": "65e3aea740f440c02dbfac72d47ddac92a678dc6d2049489871eb615e9ce9f63",
         "affectsGlobalScope": false
       },
       "../src/users/users.service.ts": {
-        "version": "10efdbae5d5b67932fa01e583e8443a27c141e74ecf494b6348e2d6ef2c67611",
-        "signature": "1713fde25ddf3ab652762982b44ab2670542f837484664fed1ad7045dd37ddf7",
+        "version": "39d3a95cb9431dc9241888cd8d653002850b3a9e57839bac6c64ff6daf1e9c60",
+        "signature": "f758d9ebac05170964055c62e0f4d56027d943dba118be6fbe09a7af5ba50571",
         "affectsGlobalScope": false
       },
       "../src/users/users.resolver.ts": {
-        "version": "83e1299555b7fe227c8d0124df1c45a9c345a3b514f6805b1b78729ee6257693",
-        "signature": "39aef4b90c664b9edc53f6da4e5b9494999294bf96a132f0789a66806e62c879",
+        "version": "d90226887e97b6f3767a426b176c589d8b67e13d8a50c74d9b26f0f7f3a26ada",
+        "signature": "39f5a5227ec761594415c21fe70b686d53152eabb0c7cee477560832aff5898c",
         "affectsGlobalScope": false
       },
       "../src/users/users.module.ts": {
-        "version": "7fc97f0b60e5a135122f40179f62f3da7091f356a297192c81661fab785c8845",
+        "version": "0574683c978d007dd70fb171cbf1c30521e0fd8f0a19b132d8d37efa7810cfd6",
         "signature": "aa1725e38b5a0b4009f6a74f296f173e7926c119a60454dbd2e523861735df69",
         "affectsGlobalScope": false
       },
-      "../src/prisma.service.ts": {
-        "version": "f2049f4b2112a13b80054320b25b3c4e72350798e91769c570ed64aed8b10d39",
-        "signature": "4e11254fb433ad6662142993fc53ad59d7892acb68b7e430a8a50b1fb279ddcb",
-        "affectsGlobalScope": false
-      },
       "../src/app.module.ts": {
-        "version": "e1b6f4ff32639df018796b99de3ab1f7c6f51dea842ca5d72f0651b15d06567a",
+        "version": "a1e5ded9399a510d1e13ad900d0d65b7084f37a53afa7f7e9e67ea8c57b2753e",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
-        "version": "67b2a438f09d575a756b451c1cda8839485f46f7231489ea7375c866c83714f6",
+        "version": "f0cda72ba80aed5a2a5daa6d475a0e80b7769c58f5d420be287599dff576df23",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+        "affectsGlobalScope": false
+      },
+      "../src/users/dto/args/getuser.args.ts": {
+        "version": "2bcbc1b7ea7c050a320f8daa5ce0a02165edb20c8d607cd3ee5beebd9f793606",
+        "signature": "44d07dfd6a34f92bb038bf25dc60b68bd08f740fe9fbb9aa9a057da954918180",
         "affectsGlobalScope": false
       },
       "../node_modules/@babel/types/lib/index.d.ts": {
@@ -8845,6 +8850,7 @@
         "../src/users/users.service.ts"
       ],
       "../src/main.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/core/index.d.ts",
         "../src/app.module.ts"
       ],
@@ -8856,48 +8862,59 @@
         "../node_modules/@nestjs/graphql/index.d.ts",
         "../node_modules/class-validator/types/index.d.ts"
       ],
-      "../src/users/dto/args/getusers.args.ts": [
-        "../node_modules/@nestjs/graphql/index.d.ts",
-        "../node_modules/class-validator/types/index.d.ts"
-      ],
       "../src/users/dto/input/createuser.input.ts": [
         "../node_modules/@nestjs/graphql/index.d.ts",
-        "../node_modules/class-validator/types/index.d.ts"
+        "../node_modules/class-validator/types/index.d.ts",
+        "../src/users/dto/input/userpost.input.ts",
+        "../src/users/dto/input/userprofile.input.ts"
       ],
-      "../src/users/dto/input/deleteuser.input.ts": [
+      "../src/users/dto/input/userpost.input.ts": [
         "../node_modules/@nestjs/graphql/index.d.ts",
         "../node_modules/class-validator/types/index.d.ts"
       ],
-      "../src/users/dto/input/updateuser.input.ts": [
+      "../src/users/dto/input/userprofile.input.ts": [
         "../node_modules/@nestjs/graphql/index.d.ts",
         "../node_modules/class-validator/types/index.d.ts"
+      ],
+      "../src/users/model/post.ts": [
+        "../node_modules/@nestjs/graphql/index.d.ts",
+        "../node_modules/reflect-metadata/index.d.ts",
+        "../src/users/model/user.ts"
+      ],
+      "../src/users/model/profile.ts": [
+        "../node_modules/@nestjs/graphql/index.d.ts",
+        "../node_modules/reflect-metadata/index.d.ts",
+        "../src/users/model/user.ts"
       ],
       "../src/users/model/user.ts": [
-        "../node_modules/@nestjs/graphql/index.d.ts"
+        "../node_modules/@nestjs/graphql/index.d.ts",
+        "../node_modules/class-validator/types/index.d.ts",
+        "../node_modules/reflect-metadata/index.d.ts",
+        "../src/users/model/post.ts",
+        "../src/users/model/profile.ts"
       ],
       "../src/users/users.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
+        "../src/prisma.service.ts",
         "../src/users/users.resolver.ts",
         "../src/users/users.service.ts"
       ],
       "../src/users/users.resolver.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/graphql/index.d.ts",
-        "../src/users/dto/args/getuser.args.ts",
-        "../src/users/dto/args/getusers.args.ts",
+        "../src/prisma.service.ts",
         "../src/users/dto/input/createuser.input.ts",
-        "../src/users/dto/input/deleteuser.input.ts",
-        "../src/users/dto/input/updateuser.input.ts",
+        "../src/users/model/post.ts",
+        "../src/users/model/profile.ts",
         "../src/users/model/user.ts",
         "../src/users/users.service.ts"
       ],
       "../src/users/users.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
-        "../src/users/dto/args/getuser.args.ts",
-        "../src/users/dto/args/getusers.args.ts",
+        "../node_modules/@prisma/client/index.d.ts",
+        "../src/prisma.service.ts",
         "../src/users/dto/input/createuser.input.ts",
-        "../src/users/dto/input/deleteuser.input.ts",
-        "../src/users/dto/input/updateuser.input.ts",
-        "../src/users/model/user.ts"
+        "../src/users/model/post.ts"
       ]
     },
     "exportedModulesMap": {
@@ -12760,22 +12777,36 @@
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@prisma/client/index.d.ts"
       ],
+      "../src/users/dto/input/createuser.input.ts": [
+        "../src/users/dto/input/userpost.input.ts",
+        "../src/users/dto/input/userprofile.input.ts"
+      ],
+      "../src/users/model/post.ts": [
+        "../node_modules/reflect-metadata/index.d.ts",
+        "../src/users/model/user.ts"
+      ],
+      "../src/users/model/profile.ts": [
+        "../node_modules/reflect-metadata/index.d.ts",
+        "../src/users/model/user.ts"
+      ],
+      "../src/users/model/user.ts": [
+        "../node_modules/reflect-metadata/index.d.ts",
+        "../src/users/model/post.ts",
+        "../src/users/model/profile.ts"
+      ],
       "../src/users/users.resolver.ts": [
-        "../src/users/dto/args/getuser.args.ts",
-        "../src/users/dto/args/getusers.args.ts",
+        "../src/prisma.service.ts",
         "../src/users/dto/input/createuser.input.ts",
-        "../src/users/dto/input/deleteuser.input.ts",
-        "../src/users/dto/input/updateuser.input.ts",
+        "../src/users/model/post.ts",
+        "../src/users/model/profile.ts",
         "../src/users/model/user.ts",
         "../src/users/users.service.ts"
       ],
       "../src/users/users.service.ts": [
-        "../src/users/dto/args/getuser.args.ts",
-        "../src/users/dto/args/getusers.args.ts",
+        "../node_modules/@prisma/client/index.d.ts",
+        "../src/prisma.service.ts",
         "../src/users/dto/input/createuser.input.ts",
-        "../src/users/dto/input/deleteuser.input.ts",
-        "../src/users/dto/input/updateuser.input.ts",
-        "../src/users/model/user.ts"
+        "../src/users/model/post.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -13763,10 +13794,11 @@
       "../src/main.ts",
       "../src/prisma.service.ts",
       "../src/users/dto/args/getuser.args.ts",
-      "../src/users/dto/args/getusers.args.ts",
       "../src/users/dto/input/createuser.input.ts",
-      "../src/users/dto/input/deleteuser.input.ts",
-      "../src/users/dto/input/updateuser.input.ts",
+      "../src/users/dto/input/userpost.input.ts",
+      "../src/users/dto/input/userprofile.input.ts",
+      "../src/users/model/post.ts",
+      "../src/users/model/profile.ts",
       "../src/users/model/user.ts",
       "../src/users/users.module.ts",
       "../src/users/users.resolver.ts",

@@ -1,3 +1,3 @@
 export declare class GetUserArgs {
-    userId: string;
+    id: number;
 }

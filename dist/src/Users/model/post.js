@@ -9,37 +9,46 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.User = void 0;
+exports.Post = void 0;
 require("reflect-metadata");
 const graphql_1 = require("@nestjs/graphql");
-const class_validator_1 = require("class-validator");
-const post_1 = require("./post");
-const Profile_1 = require("./Profile");
-let User = class User {
+const user_1 = require("./user");
+let Post = class Post {
 };
 __decorate([
     graphql_1.Field((type) => graphql_1.Int),
     __metadata("design:type", Number)
-], User.prototype, "id", void 0);
+], Post.prototype, "id", void 0);
+__decorate([
+    graphql_1.Field((type) => Date),
+    __metadata("design:type", Date)
+], Post.prototype, "createdAt", void 0);
+__decorate([
+    graphql_1.Field((type) => Date),
+    __metadata("design:type", Date)
+], Post.prototype, "updatedAt", void 0);
 __decorate([
     graphql_1.Field(),
-    class_validator_1.IsEmail(),
     __metadata("design:type", String)
-], User.prototype, "email", void 0);
+], Post.prototype, "title", void 0);
 __decorate([
-    graphql_1.Field(() => String, { nullable: true }),
+    graphql_1.Field((type) => String, { nullable: true }),
     __metadata("design:type", String)
-], User.prototype, "name", void 0);
+], Post.prototype, "content", void 0);
 __decorate([
-    graphql_1.Field(() => [post_1.Post], { nullable: true }),
-    __metadata("design:type", Array)
-], User.prototype, "posts", void 0);
+    graphql_1.Field((type) => Boolean, { nullable: true }),
+    __metadata("design:type", Boolean)
+], Post.prototype, "published", void 0);
 __decorate([
-    graphql_1.Field(() => Profile_1.Profile, { nullable: true }),
-    __metadata("design:type", Profile_1.Profile)
-], User.prototype, "profile", void 0);
-User = __decorate([
+    graphql_1.Field((type) => graphql_1.Int),
+    __metadata("design:type", Number)
+], Post.prototype, "viewCount", void 0);
+__decorate([
+    graphql_1.Field((type) => user_1.User, { nullable: true }),
+    __metadata("design:type", user_1.User)
+], Post.prototype, "author", void 0);
+Post = __decorate([
     graphql_1.ObjectType()
-], User);
-exports.User = User;
-//# sourceMappingURL=user.js.map
+], Post);
+exports.Post = Post;
+//# sourceMappingURL=post.js.map

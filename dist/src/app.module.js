@@ -11,6 +11,7 @@ const users_service_1 = require("./Users/users.service");
 const users_module_1 = require("./Users/users.module");
 const common_1 = require("@nestjs/common");
 const graphql_1 = require("@nestjs/graphql");
+const prisma_service_1 = require("./prisma.service");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -18,11 +19,12 @@ AppModule = __decorate([
         imports: [
             graphql_1.GraphQLModule.forRoot({
                 autoSchemaFile: true,
+                buildSchemaOptions: { dateScalarMode: 'timestamp' },
             }),
             users_module_1.UsersModule,
         ],
         controllers: [],
-        providers: [users_service_1.UsersService],
+        providers: [prisma_service_1.PrismaService, users_service_1.UsersService],
     })
 ], AppModule);
 exports.AppModule = AppModule;

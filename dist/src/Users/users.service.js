@@ -5,39 +5,65 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UsersService = void 0;
 const common_1 = require("@nestjs/common");
-const uuid_1 = require("uuid");
+const prisma_service_1 = require("../prisma.service");
 let UsersService = class UsersService {
-    constructor() {
-        this.users = [];
+    constructor(prismaService) {
+        this.prismaService = prismaService;
     }
-    createUser(createUserData) {
-        const user = Object.assign({ userId: uuid_1.v4() }, createUserData);
-        this.users.push(user);
-        return user;
+    async getAllUser() {
+        return await this.prismaService.user.findMany();
     }
-    updateUser(updateUserData) {
-        const user = this.users.find(user => user.userId === updateUserData.userId);
-        Object.assign(user, updateUserData);
-        return user;
+    async createUser(createUserData) {
+        var _a;
+        const postData = (_a = createUserData.posts) === null || _a === void 0 ? void 0 : _a.map((post) => {
+            return { title: post.title, content: post.content || undefined };
+        });
+        const profileData = createUserData.profile;
+        return await this.prismaService.user.create({
+            data: {
+                email: createUserData.email,
+                name: createUserData.name,
+                posts: {
+                    create: postData,
+                },
+                profile: {
+                    create: profileData,
+                },
+            },
+        });
     }
-    getUser(getUserArgs) {
-        return this.users.find(user => user.userId === getUserArgs.userId);
+    async getUser(id) {
+        return this.prismaService.user.findUnique({
+            where: { id },
+        });
     }
-    getUsers(getUsersArgs) {
-        return getUsersArgs.userId.map(userId => this.getUser({ userId }));
+    async postUpdate(id) {
+        const post = await this.prismaService.post.findUnique({
+            where: { id: id || undefined },
+            select: {
+                published: true,
+            },
+        });
+        return this.prismaService.post.update({
+            where: { id: id || undefined },
+            data: { published: !(post === null || post === void 0 ? void 0 : post.published) },
+        });
     }
-    deleteUser(deleteUserData) {
-        const userIndex = this.users.findIndex(user => user.userId === deleteUserData.userId);
-        const user = this.users[userIndex];
-        this.users.splice(userIndex);
-        return user;
+    async deleteUser(id) {
+        return await this.prismaService.user.delete({
+            where: { id: id },
+        });
     }
 };
 UsersService = __decorate([
-    common_1.Injectable()
+    common_1.Injectable(),
+    __metadata("design:paramtypes", [prisma_service_1.PrismaService])
 ], UsersService);
 exports.UsersService = UsersService;
 //# sourceMappingURL=users.service.js.map

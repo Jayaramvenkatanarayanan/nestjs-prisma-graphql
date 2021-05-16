@@ -1,16 +1,19 @@
-import { GetUserArgs } from "./dto/args/getuser.args";
-import { GetUsersArgs } from "./dto/args/getusers.args";
 import { CreateUserInput } from "./dto/input/createUser.input";
-import { DeleteUserInput } from "./dto/input/deleteUser.input";
-import { UpdateUserInput } from "./dto/input/updateUser.input";
 import { User } from "./model/user";
+import { PrismaService } from "../prisma.service";
 import { UsersService } from "./users.service";
+import { Post } from "./model/post";
+import { Profile } from "./model/profile";
 export declare class UserResolver {
     private readonly userService;
-    constructor(userService: UsersService);
-    getUser(getUserArgs: GetUserArgs): User;
-    getUsers(getUsersArgs: GetUsersArgs): User[];
-    createUser(createUserData: CreateUserInput): User;
-    updateUser(updateUserData: UpdateUserInput): User;
-    deleteUser(deleteUserData: DeleteUserInput): User;
+    private prismaService;
+    constructor(userService: UsersService, prismaService: PrismaService);
+    posts(user: User, ctx: any): Promise<Post[]>;
+    profile(user: User, ctx: any): Promise<Profile>;
+    allUsers(ctx: any): Promise<User[]>;
+    newUser(data: CreateUserInput, ctx: any): Promise<User>;
+    getUser(id: number, ctx: any): Promise<User>;
+    togglePublishPost(id: number): Promise<Post | null>;
+    deleteUser(id: number): Promise<User | null>;
+    getAllPost(): Promise<any>;
 }
